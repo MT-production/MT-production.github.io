@@ -501,7 +501,7 @@ opensdg.autotrack = function(preset, category, action, label) {
         plugin.setColorScale();
 
         plugin.years = _.uniq(availableYears).sort();
-        plugin.currentYear = plugin.years[0];
+        plugin.currentYear = plugin.years.slice(-1)[0];
 
         // And we can now update the colors.
         plugin.updateColors();
@@ -3721,7 +3721,7 @@ opensdg.chartTypes.base = function(info) {
                     backgroundColor: 'rgba(0,0,0,0.7)',
                     callbacks: {
                         label: function (tooltipItem) {
-                            return translations.t(tooltipItem.dataset.label) + ': ' + alterDataDisplay(tooltipItem.formattedValue, tooltipItem.dataset, 'chart tooltip');
+                            return translations.t(tooltipItem.dataset.label) + ': ' + alterDataDisplay(tooltipItem.raw, tooltipItem.dataset, 'chart tooltip');
                         },
                         afterBody: function () {
                             var unit = MODEL.selectedUnit ? translations.t(MODEL.selectedUnit) : MODEL.measurementUnit;
@@ -4292,13 +4292,26 @@ function alterDataDisplay(value, info, context) {
     opensdg.dataDisplayAlterations.forEach(function (callback) {
         altered = callback(altered, info, context);
     });
-    // Now apply our custom precision control if needed.
-    if (VIEW._precision || VIEW._precision === 0) {
-        altered = Number.parseFloat(altered).toFixed(VIEW._precision);
+    // If the returned value is not a number, use the legacy logic for
+    // precision and decimal separator.
+    if (typeof altered !== 'number') {
+        // Now apply our custom precision control if needed.
+        if (VIEW._precision || VIEW._precision === 0) {
+            altered = Number.parseFloat(altered).toFixed(VIEW._precision);
+        }
+        // Now apply our custom decimal separator if needed.
+        if (OPTIONS.decimalSeparator) {
+            altered = altered.toString().replace('.', OPTIONS.decimalSeparator);
+        }
     }
-    // Now apply our custom decimal separator if needed.
-    if (OPTIONS.decimalSeparator) {
-        altered = altered.toString().replace('.', OPTIONS.decimalSeparator);
+    // Otherwise if we have a number, use toLocaleString instead.
+    else {
+        var localeOpts = {};
+        if (VIEW._precision || VIEW._precision === 0) {
+            localeOpts.minimumFractionDigits = VIEW._precision;
+            localeOpts.maximumFractionDigits = VIEW._precision;
+        }
+        altered = altered.toLocaleString(opensdg.language, localeOpts);
     }
     return altered;
 }
@@ -5407,7 +5420,7 @@ if (klaroConfig && klaroConfig.noAutoLoad !== true) {
       // cause any problems. This converts the array of years into a comma-
       // delimited string of YYYY-MM-DD dates.
       times: years.map(function(y) { return y.time }).join(','),
-      currentTime: new Date(years[0].time).getTime(),
+      currentTime: new Date(years.slice(-1)[0].time).getTime(),
     });
     // Create the player.
     options.player = new L.TimeDimension.Player(options.playerOptions, options.timeDimension);
@@ -5661,14 +5674,17 @@ if (klaroConfig && klaroConfig.noAutoLoad !== true) {
             this.hasSeries = (this.allSeries.length > 0);
             this.hasUnits = (this.allUnits.length > 0);
             this.hasDisaggregations = this.hasDissagregationsWithValues();
+            this.hasDisaggregationsWithMultipleValues = this.hasDisaggregationsWithMultipleValues();
         },
 
         getVisibleDisaggregations: function() {
             var features = this.plugin.getVisibleLayers().toGeoJSON().features;
             var disaggregations = features[0].properties.disaggregations;
-            // The purpose of the rest of this function is to
-            // "prune" the disaggregations by removing any keys
-            // that are identical across all disaggregations.
+            // The purpose of the rest of this function is to identiy
+            // and remove any "region columns" - ie, any columns that
+            // correspond exactly to names of map regions. These columns
+            // are useful on charts and tables but should not display
+            // on maps.
             var allKeys = Object.keys(disaggregations[0]);
             var relevantKeys = {};
             var rememberedValues = {};
@@ -5684,6 +5700,27 @@ if (klaroConfig && klaroConfig.noAutoLoad !== true) {
                 }
             });
             relevantKeys = Object.keys(relevantKeys);
+            if (features.length > 1) {
+                // Any columns not already identified as "relevant" might
+                // be region columns.
+                var regionColumnCandidates = allKeys.filter(function(item) {
+                    return relevantKeys.includes(item) ? false : true;
+                });
+                // Compare the column value across map regions - if it is
+                // different then we assume the column is a "region column".
+                // For efficiency we only check the first and second region.
+                var regionColumns = regionColumnCandidates.filter(function(candidate) {
+                    var region1 = features[0].properties.disaggregations[0][candidate];
+                    var region2 = features[1].properties.disaggregations[0][candidate];
+                    return region1 === region2 ? false : true;
+                });
+                // Now we can treat any non-region columns as relevant.
+                regionColumnCandidates.forEach(function(item) {
+                    if (!regionColumns.includes(item)) {
+                        relevantKeys.push(item);
+                    }
+                });
+            }
             relevantKeys.push(this.seriesColumn);
             relevantKeys.push(this.unitsColumn);
             var pruned = [];
@@ -5733,6 +5770,16 @@ if (klaroConfig && klaroConfig.noAutoLoad !== true) {
             return hasDisaggregations;
         },
 
+        hasDisaggregationsWithMultipleValues: function () {
+            var hasDisaggregations = false;
+            this.allDisaggregations.forEach(function(disaggregation) {
+                if (disaggregation.values.length > 1 && disaggregation.values[1] !== '') {
+                    hasDisaggregations = true;
+                }
+            });
+            return hasDisaggregations;
+        },
+
         updateList: function () {
             var list = this.list;
             list.innerHTML = '';
@@ -5763,7 +5810,7 @@ if (klaroConfig && klaroConfig.noAutoLoad !== true) {
                         definition = L.DomUtil.create('dd', 'disaggregation-definition'),
                         container = L.DomUtil.create('div', 'disaggregation-container'),
                         field = disaggregation.field;
-                    title.innerHTML = field;
+                    title.innerHTML = translations.t(field);
                     var disaggregationValue = currentDisaggregation[field];
                     if (disaggregationValue !== '') {
                         definition.innerHTML = disaggregationValue;
@@ -5843,7 +5890,7 @@ if (klaroConfig && klaroConfig.noAutoLoad !== true) {
                         legend = L.DomUtil.create('legend', 'disaggregation-fieldset-legend'),
                         fieldset = L.DomUtil.create('fieldset', 'disaggregation-fieldset'),
                         field = disaggregation.field;
-                    legend.innerHTML = field;
+                    legend.innerHTML = translations.t(field);
                     fieldset.append(legend);
                     form.append(fieldset);
                     formInputs.append(form);
@@ -5856,7 +5903,7 @@ if (klaroConfig && klaroConfig.noAutoLoad !== true) {
                             input.tabindex = 0;
                             input.checked = (value === currentDisaggregation[field]) ? 'checked' : '';
                             var label = L.DomUtil.create('label', 'disaggregation-label');
-                            label.innerHTML = (value === '') ? 'All' : value;
+                            label.innerHTML = (value === '') ? translations.indicator.total : value;
                             label.prepend(input);
                             fieldset.append(label);
                             input.addEventListener('change', function(e) {
@@ -5911,7 +5958,7 @@ if (klaroConfig && klaroConfig.noAutoLoad !== true) {
                     numUnits = this.allUnits.length,
                     displayForm = this.displayForm;
 
-                if (displayForm && (this.hasDisaggregations || (numSeries > 1 || numUnits > 1))) {
+                if (displayForm && (this.hasDisaggregationsWithMultipleValues || (numSeries > 1 || numUnits > 1))) {
 
                     var button = L.DomUtil.create('button', 'disaggregation-button');
                     button.innerHTML = translations.indicator.change_breakdowns;
