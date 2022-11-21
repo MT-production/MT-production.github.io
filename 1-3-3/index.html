@@ -26,8 +26,9 @@ var opensdg = {
   },
 
   // A hook which can be replaced to alter whether/how the values that are
-  // displayed on indicator tables/graphs get rounded.
-  dataRounding: function(value) {
+  // displayed on indicator tables/graphs get rounded. A "context" parameter
+  // is also passed which contains additional information.
+  dataRounding: function(value, context) {
     // Alterations go here.
     return value;
   },
@@ -131,7 +132,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20221010073631">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20221121055957">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -177,10 +178,10 @@ layout-indicator
 <header role="banner" class="">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light flex-wrap align-items-start">
-            <a class="navbar-brand" href="/" id="home">
+            <a class="navbar-brand" href="/" id="home" aria-label="" title="">
     <img src="/assets/img/SDG_logo.png" alt="Ziele für Nachhaltige Entwicklung - " />
 </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="d-flex flex-wrap w-100 justify-content-between">
@@ -200,7 +201,7 @@ layout-indicator
         <label class="visually-hidden" for="indicator_search">Suche</label>
         <input class="form-control" type="search" name="q" id="indicator_search" title="Suche">
         <span class="input-group-append">
-            <button class="btn btn-outline-secondary ms-n5" aria-label="Suche" id="search-btn" type="submit">
+            <button class="btn btn-outline-secondary ms-n5" aria-label="" id="search-btn" type="submit">
                 <i class="fa fa-search"></i>
             </button>
         </span>
@@ -320,7 +321,11 @@ data-event-label="high"
         </li>
         
         <li class="breadcrumb-item">
-            <a href="/1" title="Demographie &amp; Bevölkerung">Themenbereich 1</a>
+            <a href="/1"
+               title="Themenbereich 1 - Demographie &amp; Bevölkerung"
+               aria-label="Themenbereich  - ">
+               Themenbereich 1
+            </a>
         </li>
         
     </ol>
@@ -352,7 +357,7 @@ data-event-label="high"
         <div class="row">
             
             <div class="col-4 col-md-3 col-lg-2 goal-icon goal-tiles">
-                <a href="/1" title="Zeigt die Indikatorenliste zum SDG-Ziel an.">
+                <a href="/1" aria-label=" 1" title=" 1">
                     <img src="https://wohnungnds.github.io/IM_translations/www/assets/img/goals//de/1.png"
                         alt="Demographie &amp; Bevölkerung - Themenbereich 1"
                         id="goal-1"
@@ -563,14 +568,19 @@ data-event-label="Change to Table tab"
         <dd><br> 1) Hochrechnung anhand der Bevölkerungsfortschreibung auf Basis des Zensus 2011. Die Hochrechnung für die Jahre vor 2011 sowie für bislang veröffentlichte Ergebnisse des Mikrozensus 2011-2013 basiert auf den fortgeschriebenen Ergebnissen der Volkszählung 1987. In 2016 erfolgte die Umstellung auf eine neue Mikrozensus-Stichprobe. Ab 2017 wird nur noch die Bevölkerung in Privathaushalten (ohne Gemeinschaftsunterkünfte) ausgewiesen. Dadurch ergibt sich jeweils eine eingeschränkte Vergleichbarkeit mit den Vorjahren. <br>2) Seit dem Jahr 2018 wird im Mikrozensus der Migrationshintergrund im weiteren Sinne jährlich berichtet. Die in der Tabelle ab dem Jahr 2018 abgebildeten Daten zum Migrationshintergrund entsprechen dem Migrationshintergrund im weiteren Sinne, bis 2017 wird der Migrationshintergrund im engeren Sinne abgebildet. Die Vergleichbarkeit ist dadurch eingeschränkt. <br>3) Die Ergebnisse des Mikrozensus 2020 sind unter anderem aufgrund methodischer Effekte im Rahmen einer Neugestaltung der Erhebung sowie insbesondere aufgrund der Folgen der Corona-Pandemie in Ihrer Datenqualität eingeschränkt. Auf die Verwendung dieser Ergebnisse wird daher verzichtet. Weitere Informationen zur methodischen Neugestaltung des Mikrozensus ab 2020 und zu den Auswirkungen der Neugestaltung und der Corona-Krise auf die Ergebnisse des Jahres 2020 finden Sie auf der  <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Haushalte-Familien/Methoden/mikrozensus-2020.html" target="_blank">Informationsseite des Statistischen Bundesamtes</a></dd>
         
     <dl>
+  
   </div>
 
         </div>
       </figure>
       <div id="chartSelectionDownload" class="clearfix">
-        <button id="btnSave" title="Grafik als Bild herunterladen" class='btn btn-primary btn-download'>
+        <button
+          id="btnSave"
+          title="Grafik als Bild herunterladen"
+          aria-label="Grafik als Bild herunterladen"
+          class='btn btn-primary btn-download'>
           Grafik herunterladen
-        </button><!-- 
+        </button><!--
    --></div>
     </div>
 
@@ -608,6 +618,7 @@ data-event-label="Change to Table tab"
         <dd><br> 1) Hochrechnung anhand der Bevölkerungsfortschreibung auf Basis des Zensus 2011. Die Hochrechnung für die Jahre vor 2011 sowie für bislang veröffentlichte Ergebnisse des Mikrozensus 2011-2013 basiert auf den fortgeschriebenen Ergebnissen der Volkszählung 1987. In 2016 erfolgte die Umstellung auf eine neue Mikrozensus-Stichprobe. Ab 2017 wird nur noch die Bevölkerung in Privathaushalten (ohne Gemeinschaftsunterkünfte) ausgewiesen. Dadurch ergibt sich jeweils eine eingeschränkte Vergleichbarkeit mit den Vorjahren. <br>2) Seit dem Jahr 2018 wird im Mikrozensus der Migrationshintergrund im weiteren Sinne jährlich berichtet. Die in der Tabelle ab dem Jahr 2018 abgebildeten Daten zum Migrationshintergrund entsprechen dem Migrationshintergrund im weiteren Sinne, bis 2017 wird der Migrationshintergrund im engeren Sinne abgebildet. Die Vergleichbarkeit ist dadurch eingeschränkt. <br>3) Die Ergebnisse des Mikrozensus 2020 sind unter anderem aufgrund methodischer Effekte im Rahmen einer Neugestaltung der Erhebung sowie insbesondere aufgrund der Folgen der Corona-Pandemie in Ihrer Datenqualität eingeschränkt. Auf die Verwendung dieser Ergebnisse wird daher verzichtet. Weitere Informationen zur methodischen Neugestaltung des Mikrozensus ab 2020 und zu den Auswirkungen der Neugestaltung und der Corona-Krise auf die Ergebnisse des Jahres 2020 finden Sie auf der  <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Haushalte-Familien/Methoden/mikrozensus-2020.html" target="_blank">Informationsseite des Statistischen Bundesamtes</a></dd>
         
     <dl>
+  
   </div>
 
 <div id="tableSelectionDownload" class="clearfix"></div>
@@ -792,7 +803,6 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
               <a href="https://christoph-lsn.github.io/MT_Site/assets/excel/2021_1-3-3.xlsx" target="_blank">
                 Menschen mit Migrationshintergrund nach Altersgruppen und Geschlecht <span class="visuallyhidden">in neuem Fenster öffnen</span>
@@ -1160,12 +1170,14 @@ if (allRequired) {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20221010073631'></script>
+<script src='/assets/js/sdg.js?v=20221121055957'></script>
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20221010073631"></script><script>
+    <script src="/assets/js/custom.js?v=20221121055957"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
