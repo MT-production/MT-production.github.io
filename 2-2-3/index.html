@@ -132,7 +132,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20221121055957">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20221122100958">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -685,7 +685,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Definition des Indikators </th>
         <td>
           
-            <p>Der Indikator zeigt die Anzahl Abschiebungen und Überstellungen nach der Dublin III VO.<br /> Das Dublin-Verfahren dient der Zuständigkeitsbestimmung zur Durchführung des Asylverfahrens in einem EU-Mitgliedstaat. Die Dublin III-VO legt Kriterien und Verfahren fest, die bei der Bestimmung des Mitgliedstaates, der für die Prüfung des gestellten Antrags auf internationalen Schutz zuständig ist, zur Anwendung kommen. Die Dublin III VO wird in allen EU-Mitgliedstaaten sowie Norwegen, Island, Liechtenstein und der Schweiz angewendet. Das Dublin-Verfahren bezweckt, dass jeder Asylantrag, der auf dem Hoheitsgebiet der Mitgliedstaaten gestellt wird, materiell-rechtlich nur durch einen Staat geprüft wird. Damit soll die Sekundärwanderung innerhalb Europas gesteuert bzw. begrenzt werden.</p>
+            <p>Der Indikator zeigt die Anzahl der Abschiebungen und Überstellungen nach der Dublin III VO.<br /> Das Dublin-Verfahren dient der Zuständigkeitsbestimmung zur Durchführung des Asylverfahrens in einem EU-Mitgliedstaat. Die Dublin III-VO legt Kriterien und Verfahren fest, die bei der Bestimmung des Mitgliedstaates, der für die Prüfung des gestellten Antrags auf internationalen Schutz zuständig ist, zur Anwendung kommen. Die Dublin III VO wird in allen EU-Mitgliedstaaten sowie Norwegen, Island, Liechtenstein und der Schweiz angewendet. Das Dublin-Verfahren bezweckt, dass jeder Asylantrag, der auf dem Hoheitsgebiet der Mitgliedstaaten gestellt wird, materiell-rechtlich nur durch einen Staat geprüft wird. Damit soll die Sekundärwanderung innerhalb Europas gesteuert bzw. begrenzt werden.</p>
 
           
         </td>
@@ -717,7 +717,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Weiterführende Informationen </th>
         <td>
           
-            <p>Weitere Informationen zum Ablauf des Dublin Verfahrens im Bundesamt für Migration und Flüchtlinge finden Sie auf den Internetseiten des <a href="https://www.bamf.de/DE/Themen/AsylFluechtlingsschutz/AblaufAsylverfahrens/DublinVerfahren/dublinverfahren-node.html">BAMF</a>.</p>
+            <p>Weitere Informationen zum Ablauf des Dublin Verfahrens im Bundesamt für Migration und Flüchtlinge finden Sie auf den Internetseiten des <a href="https://www.bamf.de/DE/Themen/AsylFluechtlingsschutz/AblaufAsylverfahrens/DublinVerfahren/dublinverfahren-node.html">BAMF</a>. <br /> Zum Thema Ausländer- und Flüchtlingsangelegenheiten stellt das Nds. Ministerium für Inneres und Sport an <a href="https://www.mi.niedersachsen.de/startseite/themen/auslanderangelegenheiten/zahlen_daten_fakten/statistische_daten/lagebilder-zu-fluechlings--und-auslaenderangelegenheiten-164283.html">dieser Stelle</a> monatlich statistische Auswertungen zur Verfügung, aus denen sich aktuelle Zahlen und Entwicklungen der Asyl-und Flüchlingssituation ablesen lassen.</p>
 
           
         </td>
@@ -896,12 +896,17 @@ data-event-label="Change to Sources tab"
       
       
       
+        
+          
+      
+      
+      
       
       <tr>
-        <th scope="row">Weitere Informationen </th>
+        <th scope="row">Datenquelle </th>
         <td>
           
-            <p>Zum Thema Ausländer- und Flüchtlingsangelegenheiten stellt das Nds. Ministerium für Inneres und Sport an <a href="https://www.mi.niedersachsen.de/startseite/themen/auslanderangelegenheiten/zahlen_daten_fakten/statistische_daten/lagebilder-zu-fluechlings--und-auslaenderangelegenheiten-164283.html">dieser Stelle</a> monatlich statistische Auswertungen zur Verfügung, aus denen sich aktuelle Zahlen und Entwicklungen der Asyl-und Flüchlingssituation ablesen lassen.</p>
+            <p>Niedersächisches Miniterium für Inneres und Sport, Statistische Daten zur Flüchtlingssituation</p>
 
           
         </td>
@@ -919,22 +924,40 @@ data-event-label="Change to Sources tab"
       
         
           
-      
-      
-      
-        
-          
   
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Link zur Datenquelle </th>
+        <td>
           
-      
-      
-      
-        
+            
+            
+            
+            
+            
+              
+              
+              
+              <a href="/Datenquelle_Link_MI">
+                Datenquelle_Link_MI_text
+              </a>
+            
+
           
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
   </tbody>
 </table>
 
@@ -1164,14 +1187,14 @@ if (allRequired) {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20221121055957'></script>
+<script src='/assets/js/sdg.js?v=20221122100958'></script>
 <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20221121055957"></script><script>
+    <script src="/assets/js/custom.js?v=20221122100958"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
