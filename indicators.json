@@ -22,14 +22,6 @@
           "status": "complete"
         },
         {
-          "id": "1-1-3",
-          "title": "Bevölkerungsentwicklung in Niedersachsen (Veränderung in Prozent gegenüber dem Vorjahr)",
-          "description": "Zur Bevölkerung zählen alle Menschen, die in einem definierten Gebiet dauerhaft wohnen. Diese werden der Gemeinde zugerechnet, in der sie ihre alleinige Wohnung oder bei mehreren Wohnungen in verschiedenen Gemeinden ihren Erstwohnsitz haben („Bevölkerung am Ort der Hauptwohnung“). Zur Bevölkerung zählen auch die im Bundesgebiet gemeldeten Ausländerinnen und Ausländer (einschließlich Staatenlose). Nicht zur Bevölkerung gehören hingegen die Angehörigen der Stationierungsstreitkräfte sowie Angehörigen der ausländischen diplomatischen und konsularischen Vertretungen mit ihren Familienmitgliedern.",
-          "keywords": "",
-          "href": "/1-1-3/",
-          "status": "complete"
-        },
-        {
           "id": "1-2-1",
           "title": "Ausländerinnen und Ausländer in Niedersachsen",
           "description": "Zu den in Deutschland lebenden Ausländerinnen und Ausländern zählen alle Personen, die nicht die deutsche Staatsangehörigkeit besitzen und die sich nicht nur für einen kurzen Zeitraum in Deutschland aufhalten. Dazu gehören auch Staatenlose und Personen mit ungeklärter Staatsangehörigkeit. Deutsche, die zugleich eine fremde Staatsangehörigkeit besitzen, zählen nicht zur ausländischen Bevölkerung. Der Ausländeranteil stellt den Anteil der Ausländerinnen und Ausländer (Quelle: Ausländerzentralregister) je 100 Einwohnerinnen und Einwohner (Quelle: Bevölkerungsfortschreibung) jeweils zum 31.12. eines Jahres dar. Prozesse der gesellschaftlichen Teilhabe gestalten sich insbesondere auch vor dem Hintergrund des Ausländeranteils an der Bevölkerung regional sehr unterschiedlich. Zum Anteil der Menschen mit Zuwanderungsgeschichte vgl. Indikator 1.3.1.",
@@ -67,7 +59,7 @@
           "description": "Zu den in Deutschland lebenden Ausländerinnen und Ausländern zählen alle Personen, die nicht die deutsche Staatsangehörigkeit besitzen und die sich nicht nur für einen kurzen Zeitraum in Deutschland aufhalten. Die Staatsangehörigkeit ist eine besondere Rechtsbeziehung, die eine Person einem bestimmten Staat zuordnet. In allen anderen Staaten ist diese Person Ausländerin bzw. Ausländer. Personen, die keine Staatsangehörigkeit besitzen, sind staatenlos. Deutsche, die zugleich eine fremde Staatsangehörigkeit besitzen, zählen nicht zur ausländischen Bevölkerung.",
           "keywords": "",
           "href": "/1-2-5/",
-          "status": "complete"
+          "status": "notstarted"
         },
         {
           "id": "1-2-6",
@@ -123,7 +115,7 @@
           "description": "Als eine der wichtigsten Basisinformationen zur gesellschaftlichen Teilhabe beschreibt dieser Indikator den Einfluss der Migration auf die Gesellschaft. Das Konzept der „Bevölkerung mit Migrationshintergrund“ umfasst nicht nur die eigentliche Migration nach Deutschland, sondern schließt auch die Nachkommen der Zugewanderten ein. Die Unterscheidung nach Deutschen und Nichtdeutschen (vgl. Indikator 1.2.1) wird damit erweitert: Eine Person hat nach dem Mikrozensus einen Migrationshintergrund, wenn sie selbst oder mindestens ein Elternteil die deutsche Staatsangehörigkeit nicht durch Geburt besitzt. Die Definition umfasst im Einzelnen folgende Personen:<br>  1. zugewanderte und nicht zugewanderte Ausländer;<br>  2. zugewanderte und nicht zugewanderte Eingebürgerte;<br>  3. (Spät-)Aussiedler;<br>  4. mit deutscher Staatsangehörigkeit geborene Nachkommen<br>  Der Migrationshintergrund kann sich demnach auch ausschließlich aus den Eigenschaften der Eltern ableiten. Dargestellt wird die Zahl der Menschen mit Zuwanderungsgeschichte nach ausgewählten Herkunftsländern und Geschlecht.",
           "keywords": "",
           "href": "/1-3-4/",
-          "status": "inprogress"
+          "status": "notstarted"
         },
         {
           "id": "1-4-1",
@@ -243,6 +235,14 @@
           "description": "Der Indikator zeigt die Anzahl der in Niedersachsen gestellten Asylanträge  (Erst- und Folgeanträge). Das Bundesamt für Migration und Flüchtlinge entscheidet über die Asylanträge. Die Aufenthaltsregelung während und nach dem Abschluss des Asylverfahrens fällt in die Zuständigkeit der Ausländerbehörden.",
           "keywords": "",
           "href": "/2-2-4/",
+          "status": "complete"
+        },
+        {
+          "id": "2-2-5",
+          "title": "Inobhutnahmen unbegleitet eingereister Kinder und Jugendlicher in Niedersachsen",
+          "description": "Der Indikator zeigt die Anzahl der Inobhutnahmen von unbegleitet eingereisten Kindern und Jugendlichen (§42 SGB VII) differenziert nach Altersgruppen in Niedersachsen. Diese Maßnahme kann sowohl in regulärer als auch in vorläufiger Form erfolgen, um das Wohl eines Kindes oder Jugendlichen zu schützen. Neben der Verteilung über die Altersgruppen wird eine Unterscheidung in vorläufige und reguläre Inobhutnahmen dargestellt.",
+          "keywords": "",
+          "href": "/2-2-5/",
           "status": "complete"
         },
         {
@@ -438,14 +438,6 @@
           "status": "complete"
         },
         {
-          "id": "5-2-2",
-          "title": "Sozialversicherungspflichtig beschäftigte Ausländerinnen und Ausländer nach Art der Ausbildung",
-          "description": "Sozialversicherungspflichtig Beschäftigte umfassen alle Arbeitnehmerinnen und Arbeitnehmer, die krankenversicherungspflichtig, rentenversicherungspflichtig oder beitragspflichtig nach dem SGB III sind oder für die Beitragsanteile zu den gesetzlichen Rentenversicherungen zu leisten sind. Dazu gehören unter anderem auch Auszubildende. Die Beschäftigten werden nach Art ihrer beruflichen Qualifikation in drei Gruppen aufgegliedert: Als hohe Qualifikation gelten Fachhochschul- und Hochschulabschlüsse. Als mittlere Qualifikation gilt der Abschluss einer anerkannten Berufsausbildung sowie ein Meister-/Techniker- oder gleichwertiger Fachschulabschluss. Als niedrige Qualifikation gelten alle Fälle, in denen keine abgeschlossene Berufsausbildung vorliegt. Die statistischen Ergebnisse können differenziert nach Deutschen und Ausländerinnen und Ausländern ausgewiesen werden.",
-          "keywords": "",
-          "href": "/5-2-2/",
-          "status": "complete"
-        },
-        {
           "id": "5-3-1",
           "title": "Erwerbslosenanteil nach Zuwanderungsgeschichte",
           "description": "Als erwerbslos gelten solche Personen, die normalerweise erwerbstätig sind und zurzeit nur vorübergehend, da sie noch keinen neuen Arbeitsplatz gefunden haben, aus dem Erwerbsleben ausgeschieden sind, sowie Schulabgängerinnen und Schulabgänger, die sich um eine Lehr- bzw. Arbeitsstelle bemühen. Die Bezeichnung „erwerbslos“ ist unabhängig davon, ob jemand bei der Agentur für Arbeit als Arbeitsloser oder als Arbeitssuchender gemeldet ist bzw. Arbeitslosengeld oder -hilfe bezieht. Personen, die normalerweise keinem Erwerb nachgehen, z.B. nicht berufstätige Ehefrauen, gelten nicht als erwerbslos. Der Erwerbslosenanteil bezieht, gegliedert nach Altersgruppen, die Zahl der Erwerbslosen auf die aller Personen im Erwerbsalter (15 bis unter 65 Jahre).",
@@ -516,6 +508,14 @@
           "keywords": "",
           "href": "/6-3-1/",
           "status": "complete"
+        },
+        {
+          "id": "6-3-2",
+          "title": "Haushalte nach Haushaltsgröße, Migrationsstatus und Haushaltsnettoeinkommen",
+          "description": "Der Indikator zeigt das Haushaltsnettoeinkommen nach Migrationshintergrund und Haushaltsgröße. Das Haushalts­netto­einkommen ergibt sich rechnerisch, indem vom Haushalts­brutto­einkommen (alle Einnahmen des Haushalts aus Erwerbs­tätigkeit, aus Vermögen, aus öffentlichen und nicht öffentlichen Transfer­zahlungen sowie aus Unter­vermietung) Ein­kommen-/Lohn­steuer, Kirchen­steuer und Soli­daritäts­zuschlag sowie die Pflicht­beiträge zur Sozial­versicherung abge­zogen werden. Zu den Pflichtbeiträgen zur Sozial­versicherung zählen die Beiträge zur Arbeits­losen­versicherung, zur gesetzlichen Renten­versicherung und die Beiträge zur frei­willigen und privaten Kranken­versicherung sowie zur sozialen und privaten Pflege­versicherung.",
+          "keywords": "",
+          "href": "/6-3-2/",
+          "status": "notstarted"
         }]
     }
   },
@@ -539,7 +539,7 @@
           "description": "Der Indikator stellt Kennzahlen zur Wohnsituation der Bevölkerung mit und ohne Zuwanderungsgeschichte dar. Die Wohnfläche wird als mittlere Wohnungsgröße je Person in Quadratmetern (m²) angegeben. Die mittlere Bruttokaltmiete pro Quadratmeter in Euro gibt Aufschluss über die Mietbelastung der jeweiligen Bevölkerungsgruppe. Die Menschen mit Zuwanderungsgeschichte werden zusätzlich unterschieden in Personen mit eigener Migrationserfahrung (Zugewanderte) und ohne eigene Migrationserfahrung (in Deutschland Geborene). Die Miete als monatliche Fixkosten und die zur Verfügung stehende Wohnfläche beschreiben grundlegende Bedingungen des täglichen Lebens.",
           "keywords": "",
           "href": "/7-2-1/",
-          "status": "complete"
+          "status": "notstarted"
         },
         {
           "id": "7-2-2",
