@@ -208,7 +208,7 @@
         {
           "id": "2-2-1",
           "title": "EASY-Zugänge in Niedersachsen",
-          "description": "Das Land Niedersachsen ist nach dem Asylge­setz verpflichtet, Menschen mit ausländischer Staatsangehörigkeit, die im Bundesgebiet um Asyl bitten, aufzunehmen. Die Aufnahmequote richtet sich nach dem sogenannten „Königsteiner Schlüssel'. Die Asylsuchenden werden mit Hilfe des bundesweiten Verteilungssystems „EASY' (Erstverteilung von Asyl­suchenden) entsprechend der Aufnahmequote auf die Länder verteilt. Niedersachsen unterhält für diese Personenkreise an den Standorten Braunschweig, Bramsche und Friedland, Oldenburg, Bad Fallingbostel und Osnabrück der Landes­auf­nah­me­be­hörde Niedersachsen (LAB NI) Aufnahmeeinrichtungen.<br> Weitere Informationen zur Erstverteilung der Asylsuchenden und dem Königssteiner Schlüssel finden Sie auf den Internetseiten des [BAMF](https://www.bamf.de/DE/Themen/AsylFluechtlingsschutz/AblaufAsylverfahrens/Erstverteilung/erstverteilung-node.html).",
+          "description": "Das Land Niedersachsen ist nach dem Asylge­setz verpflichtet, Menschen mit ausländischer Staatsangehörigkeit, die im Bundesgebiet um Asyl bitten, aufzunehmen. Die Aufnahmequote richtet sich nach dem sogenannten „Königsteiner Schlüssel'. Die Asylsuchenden werden mit Hilfe des bundesweiten Verteilungssystems „EASY' (Erstverteilung von Asyl­suchenden) entsprechend der Aufnahmequote auf die Länder verteilt. Niedersachsen unterhält für diese Personenkreise an den Standorten Braunschweig, Bramsche und Friedland, Oldenburg, Celle und Osnabrück der Landes­auf­nah­me­be­hörde Niedersachsen (LAB NI) Aufnahmeeinrichtungen.<br> Weitere Informationen zur Erstverteilung der Asylsuchenden und dem Königssteiner Schlüssel finden Sie auf den Internetseiten des [BAMF](https://www.bamf.de/DE/Themen/AsylFluechtlingsschutz/AblaufAsylverfahrens/Erstverteilung/erstverteilung-node.html).",
           "keywords": "",
           "href": "/2-2-1/",
           "status": "complete"
@@ -511,7 +511,7 @@
         },
         {
           "id": "6-3-2",
-          "title": "Haushalte nach Haushaltsgröße, Migrationsstatus und Haushaltsnettoeinkommen",
+          "title": "Haushalte nach Haushaltsgröße, Migrationsstatus und Haushaltsnettoeinkommen (in 1000)",
           "description": "Der Indikator zeigt das Haushaltsnettoeinkommen nach Migrationshintergrund und Haushaltsgröße. Das Haushalts­netto­einkommen ergibt sich rechnerisch, indem vom Haushalts­brutto­einkommen (alle Einnahmen des Haushalts aus Erwerbs­tätigkeit, aus Vermögen, aus öffentlichen und nicht öffentlichen Transfer­zahlungen sowie aus Unter­vermietung) Ein­kommen-/Lohn­steuer, Kirchen­steuer und Soli­daritäts­zuschlag sowie die Pflicht­beiträge zur Sozial­versicherung abge­zogen werden. Zu den Pflichtbeiträgen zur Sozial­versicherung zählen die Beiträge zur Arbeits­losen­versicherung, zur gesetzlichen Renten­versicherung und die Beiträge zur frei­willigen und privaten Kranken­versicherung sowie zur sozialen und privaten Pflege­versicherung.",
           "keywords": "",
           "href": "/6-3-2/",
@@ -527,7 +527,7 @@
         
         {
           "id": "7-1-1",
-          "title": "Paare mit und ohne Kinder und Familien nach Paar-Familientyp und Zuwanderungsgeschichte",
+          "title": "Paare mit und ohne Kinder und Familien nach Paar-Familientyp und Zuwanderungsgeschichte (in 1000)",
           "description": "Der Indikator stellt die Lebensformen der Menschen mit Zuwanderungsgeschichte sowie die Anzahl der in der jeweiligen Lebensform lebenden Kinder dar. Damit bildet der Indikator die Verteilung der erwachsenen Bevölkerung mit Zuwanderungsgeschichte über die verschiedenen Lebensformen mit und ohne Kinder ab. Die Daten zeigen die Vielfalt der Lebensformen in der Bevölkerung und weisen dabei auf Unterschiede zwischen der Bevölkerung mit und ohne Zuwanderungsgeschichte hin.",
           "keywords": "",
           "href": "/7-1-1/",
